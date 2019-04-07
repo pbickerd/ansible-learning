@@ -10,6 +10,7 @@
     - screen
     - lsof
     - vim
+    - python-pip
 
 - name: Set vim color scheme
   template:
