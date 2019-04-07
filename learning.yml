@@ -2,6 +2,7 @@
   connection: local
   become: yes
   roles:
+    - common
     - grafana
     - influxdb
     - telegraf

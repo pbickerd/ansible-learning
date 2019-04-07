@@ -1,0 +1,17 @@
+---
+# tasks file for common
+
+- name: Install useful tools
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - tmux
+    - screen
+    - lsof
+    - vim
+
+- name: Set vim color scheme
+  template:
+    src: vimrc.j2
+    dest: ~/.vimrc

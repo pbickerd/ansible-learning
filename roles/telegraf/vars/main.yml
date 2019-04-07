@@ -2,6 +2,9 @@
 # vars file for telegraf
 
 influxdb_ip_address: localhost
+influxdb_urls:
+ - http://localhost:8086
 influxdb_username: telegraf
 influxdb_password: "'hellotelegraf123'"
+influxdb_telegraf_password: hellotelegraf123
 influxdb_database_name: telegraf
