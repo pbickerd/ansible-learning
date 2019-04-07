@@ -1,0 +1,14 @@
+# tasks file for grafana
+
+- name: Download and install nightly influx build
+  package:
+    name: https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly.x86_64.rpm
+    state: present
+   
+
+
+- name: Enable Influx service
+  service:
+    name: influxdb
+    enabled: yes
+    state: started

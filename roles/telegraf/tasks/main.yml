@@ -1,0 +1,26 @@
+# tasks file for grafana
+
+- name: Download and install Telegraf
+  package:
+    name: https://dl.influxdata.com/telegraf/releases/telegraf-1.10.2-1.x86_64.rpm
+    state: present
+   
+
+
+- name: Enable Telegraf service
+  service:
+    name: telegraf
+    enabled: yes
+    state: started
+
+- name: Install influx python module
+  pip:
+    name: influxdb
+
+- name: Create influx database
+  influxdb_database:
+    hostname: "{{influxdb_ip_address}}"
+    database_name: "{{influxdb_database_name}}"
+
+- name: Create influx user
+  command: 'influx -database {{influxdb_database_name}} -execute "CREATE USER {{influxdb_username}} WITH PASSWORD {{influxdb_password}}"'

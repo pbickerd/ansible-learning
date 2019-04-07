@@ -1,0 +1,7 @@
+---
+# vars file for telegraf
+
+influxdb_ip_address: localhost
+influxdb_username: telegraf
+influxdb_password: "'hellotelegraf123'"
+influxdb_database_name: telegraf
